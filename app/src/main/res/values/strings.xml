@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MyRetrofit</string>
-    <string name="label_title">Email</string>
-    <string name="label_categories">Name</string>
+    <string name="label_title">Title</string>
+    <string name="label_categories">Category</string>
     <string name="label_save">Save</string>
     <string name="label_content">Content</string>
 </resources>
