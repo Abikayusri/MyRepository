@@ -5,11 +5,11 @@ import com.google.gson.annotations.SerializedName
 
 data class ContentBody(
     @SerializedName("categories")
-    val categories: String?,
+    val categories: String? = null,
     @SerializedName("content")
-    val content: String?,
+    val content: String? = null,
     @SerializedName("id")
-    val id: Int?,
+    val id: Int? = 0,
     @SerializedName("title")
-    val title: String?
+    val title: String? = null
 )

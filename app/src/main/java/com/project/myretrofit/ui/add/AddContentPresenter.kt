@@ -1,8 +1,9 @@
-package com.project.myretrofit.add
+package com.project.myretrofit.ui.add
 
-import com.project.myretrofit.model.DefaultResponse
+import com.project.myretrofit.model.PostResponse
 import com.project.myretrofit.model.PostContentResponse
 import com.project.myretrofit.network.ApiClient
+import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
@@ -16,13 +17,13 @@ class AddContentPresenter(private val listener: Listener) {
     fun createContent(postContentResponse: PostContentResponse) {
 //        listener.onAddContentLoading(true)
         ApiClient.instance.addContent(postContentResponse)
-            .enqueue(object : Callback<DefaultResponse> {
-                override fun onFailure(call: retrofit2.Call<DefaultResponse>, t: Throwable) {
+            .enqueue(object : Callback<PostResponse> {
+                override fun onFailure(call: Call<PostResponse>, t: Throwable) {
                     listener.onAddContentFailure("Error datanya")
                 }
 
                 override fun onResponse(
-                    call: retrofit2.Call<DefaultResponse>, response: Response<DefaultResponse>
+                    call: Call<PostResponse>, response: Response<PostResponse>
                 ) {
                     listener.onAddContentSuccess("Data Sukses")
                 }

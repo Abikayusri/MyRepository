@@ -24,15 +24,6 @@ object ApiClient {
         retrofit.create(ApiService::class.java)
     }
 
-//    private val retrofit: Retrofit
-//        get() {
-//            return Retrofit.Builder()
-//                .baseUrl(BASE_URL)
-//                .client(client)
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build()
-//        }
-
     private val logging: HttpLoggingInterceptor
         get() {
             val httpLoggingInterceptor = HttpLoggingInterceptor()
@@ -45,7 +36,4 @@ object ApiClient {
         .addInterceptor(logging)
         .build()
 
-//    fun getApiService(): ApiService {
-//        return retrofit.create(ApiService::class.java)
-//    }
 }

@@ -6,4 +6,7 @@ package com.project.myretrofit.model
  * Bismillahirrahmanirrahim
  */
 
-data class DefaultResponse(val error: Boolean, val message: String)
+data class PostResponse(
+    val error: Boolean,
+    val message: String
+)

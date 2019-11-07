@@ -1,15 +1,11 @@
-package com.project.myretrofit.add
+package com.project.myretrofit.ui.add
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.project.myretrofit.R
-import com.project.myretrofit.model.DefaultResponse
 import com.project.myretrofit.model.PostContentResponse
-import com.project.myretrofit.network.ApiClient
 import kotlinx.android.synthetic.main.activity_add_content.*
-import retrofit2.Callback
-import retrofit2.Response
 
 class AddContentActivity : AppCompatActivity(), AddContentPresenter.Listener {
 
@@ -53,13 +49,13 @@ class AddContentActivity : AppCompatActivity(), AddContentPresenter.Listener {
             addContentPresenter.createContent(postContent)
 
 //            ApiClient.instance.addContent(postContent)
-//                .enqueue(object : Callback<DefaultResponse> {
-//                    override fun onFailure(call: retrofit2.Call<DefaultResponse>, t: Throwable) {
+//                .enqueue(object : Callback<PostResponse> {
+//                    override fun onFailure(call: retrofit2.Call<PostResponse>, t: Throwable) {
 //                        Toast.makeText(this@AddContentActivity, "Error", Toast.LENGTH_SHORT).show()
 //                    }
 //
 //                    override fun onResponse(
-//                        call: retrofit2.Call<DefaultResponse>, response: Response<DefaultResponse>
+//                        call: retrofit2.Call<PostResponse>, response: Response<PostResponse>
 //                    ) {
 //                        Toast.makeText(this@AddContentActivity, "Sukses", Toast.LENGTH_SHORT).show()
 //                    }
