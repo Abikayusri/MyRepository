@@ -8,10 +8,10 @@ import com.google.gson.annotations.SerializedName
  * Bismillahirrahmanirrahim
  */
 data class PostContentResponse (
+    @SerializedName("title")
+    val title: String?,
     @SerializedName("categories")
     val categories: String?,
     @SerializedName("content")
-    val content: String?,
-    @SerializedName("title")
-    val title: String?
+    val content: String?
 )

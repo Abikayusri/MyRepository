@@ -30,10 +30,16 @@ class MainPresenter(private val listener: Listener) {
                     val code = response.code()
                     if (code == 200) {
                         listener.onGetContentListSuccess(body.toMutableList())
+                        for(item in body) {
+                            Log.d("Main Presenter", "id: " + item.id)
+                            Log.d("Main Presenter", "categories: " + item.categories)
+                            Log.d("Main Presenter", "title: " + item.title)
+                        }
                         Log.d("Main Presenter", "Data bisa diload")
+                    } else {
+                        listener.onGetContentListFailure("Datanya gabisa diload")
+                        Log.d("Main Presenter", "Data gabisa diload")
                     }
-                    listener.onGetContentListFailure("Datanya gabisa diload")
-                    Log.d("Main Presenter", "Data bisa diload")
                 }
             })
     }
