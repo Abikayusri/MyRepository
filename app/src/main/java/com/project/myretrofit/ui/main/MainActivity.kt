@@ -11,7 +11,6 @@ import com.project.myretrofit.ui.add.AddContentActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainPresenter.Listener {
-
     private lateinit var mainPresenter: MainPresenter
     private lateinit var mainAdapter: MainAdapter
 
@@ -23,7 +22,7 @@ class MainActivity : AppCompatActivity(), MainPresenter.Listener {
         setupListener()
     }
 
-    override fun onResume() {
+    override fun  onResume() {
         super.onResume()
         mainPresenter.getContentList()
     }
@@ -48,6 +47,10 @@ class MainActivity : AppCompatActivity(), MainPresenter.Listener {
         mainAdapter.addContentList(contentList)
         Toast.makeText(this, "Sukses datanya bro", Toast.LENGTH_SHORT).show()
     }
+
+//    override fun onGetContentListSuccess(sccMessage: String) {
+//        Toast.makeText(this, sccMessage, Toast.LENGTH_SHORT).show()
+//    }
 
     override fun onGetContentListFailure(errMessage: String) {
         Toast.makeText(this, errMessage, Toast.LENGTH_SHORT).show()

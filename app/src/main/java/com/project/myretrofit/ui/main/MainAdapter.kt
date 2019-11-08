@@ -20,9 +20,9 @@ class MainAdapter: RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
     private val contentList = mutableListOf<ContentBody>()
 
-    fun addContentList(content: MutableList<ContentBody>) {
+    fun addContentList(students: MutableList<ContentBody>) {
         contentList.clear()
-        contentList.addAll(content)
+        contentList.addAll(students)
         notifyDataSetChanged()
     }
 

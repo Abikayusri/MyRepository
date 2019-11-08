@@ -26,9 +26,9 @@ class MainPresenter(private val listener: Listener) {
                     call: Call<List<ContentBody>>,
                     response: Response<List<ContentBody>>
                 ) {
-                    val body = response.body()
+                    val body = response.body()!!
                     val code = response.code()
-                    if (body != null && code == 200) {
+                    if (code == 200) {
                         listener.onGetContentListSuccess(body.toMutableList())
                         Log.d("Main Presenter", "Data bisa diload")
                     }
@@ -39,6 +39,7 @@ class MainPresenter(private val listener: Listener) {
     }
 
     interface Listener {
+//        fun onGetContentListSuccess(sccMessage: String)
         fun onGetContentListSuccess(contentList: MutableList<ContentBody>)
         fun onGetContentListFailure(errMessage: String)
 //        fun ongetContentListLoading(isLoading: Boolean)
