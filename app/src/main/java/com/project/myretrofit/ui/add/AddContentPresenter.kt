@@ -15,7 +15,6 @@ import retrofit2.Response
 class AddContentPresenter(private val listener: Listener) {
 
     fun createContent(postContentResponse: PostContentResponse) {
-//        listener.onAddContentLoading(true)
         ApiClient.instance.addContent(postContentResponse)
             .enqueue(object : Callback<PostResponse> {
                 override fun onFailure(call: Call<PostResponse>, t: Throwable) {
@@ -34,7 +33,5 @@ class AddContentPresenter(private val listener: Listener) {
     interface Listener {
         fun onAddContentSuccess(sccMessage: String)
         fun onAddContentFailure(errMessage: String)
-//        fun onAddContentLoading(isLoading: Boolean)
     }
-
 }

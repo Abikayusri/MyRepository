@@ -74,7 +74,4 @@ class AddContentActivity : AppCompatActivity(), AddContentPresenter.Listener {
     override fun onAddContentFailure(errMessage: String) {
         Toast.makeText(this, errMessage, Toast.LENGTH_SHORT).show()
     }
-
-//    override fun onAddContentLoading(isLoading: Boolean) {
-//    }
 }
