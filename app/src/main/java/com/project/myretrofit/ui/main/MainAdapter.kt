@@ -54,13 +54,13 @@ class MainAdapter: RecyclerView.Adapter<MainAdapter.ViewHolder>() {
             itemView.tv_item_categories.text = content.categories
             itemView.tv_item_content.text = content.content
 
-            itemView.setOnClickListener{v ->
-                val context = v.context
-                val intent = Intent(context, DetailActivity::class.java)
-                intent.putExtra(DetailActivity.EXTRA_CONTENT, content.id)
-
-                context.startActivity(intent)
-            }
+//            itemView.setOnClickListener{v ->
+//                val context = v.context
+//                val intent = Intent(context, DetailActivity::class.java)
+//                intent.putExtra(DetailActivity.EXTRA_CONTENT, content.id)
+//
+//                context.startActivity(intent)
+//            }
         }
     }
 }
